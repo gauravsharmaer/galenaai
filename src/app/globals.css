@@ -2,3 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+header{
+  position: fixed;
+  z-index: 999999;
+  
+}
+main{
+position: relative;
+top:8rem;
+
+}
+footer{
+  position: relative;
+    top:44rem;
+}
+
+@media (max-width: 768px) {
+  footer{
+    position: relative;
+    top:44.2rem;
+  }
+ 
+}
