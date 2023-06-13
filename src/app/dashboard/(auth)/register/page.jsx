@@ -83,7 +83,7 @@ const Register = () => {
       <br/>
       <span className="pl-36 sm:pl-44 ">OR </span>
       <br/>
-      <Link href="/dashboard/login" className="pl-6 mb-5 mt-4 sm:pl-28 hover:text-orange-400">
+      <Link href="/login" className="pl-6 mb-5 mt-4 sm:pl-28 hover:text-orange-400">
         Login with an existing account
       </Link>
     </div>

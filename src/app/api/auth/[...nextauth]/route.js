@@ -52,10 +52,11 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    error: "/dashboard/login",
+    error: "/login",
   },
 //if there is an error while login redirect back to login page
 });
 
 export { handler as GET, handler as POST };
+//it means we can use both handler for both get and post request
 //when we fetch user info its get method and when we send email and paasword its post method

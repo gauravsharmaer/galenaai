@@ -27,10 +27,9 @@
 
 // export default Dashboard
 
-
 import React, { useEffect } from 'react';
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'; // Import from next/router, not next/navigation
 
 const Dashboard = () => {
   const { data: session, status } = useSession();
@@ -38,7 +37,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (status === 'unauthenticated') {
-      router.push('/dashboard/login');
+      router.push('/login');
     }
   }, [status, router]);
 
@@ -46,11 +45,16 @@ const Dashboard = () => {
     return <p>Loading...</p>;
   }
 
-  return (
-    <div>
-      <h1 className='text-center text-orange-400'>This is Dashboard</h1>
-    </div>
-  );
+  if (status === 'authenticated') {
+    return (
+      <div>
+        <h1 className="text-center text-orange-400">This is Dashboard</h1>
+      </div>
+    );
+  }
+
+  // Handle other session status (e.g., 'error')
+  return <p className='text-center font-bold text-3xl text-red-500'>...Redirecting to login page</p>;
 };
 
 export default Dashboard;
