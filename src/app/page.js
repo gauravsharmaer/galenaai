@@ -37,7 +37,7 @@ if(input.length === 0){
   //
   const handlesearch= async () => {
    
-    const apiKey ="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"
+    const apiKey =`${process.env.OPENAI_API_KEY}`
     const apiEndpoint = 'https://api.openai.com/v1/chat/completions';
     const payload = {
       model: 'gpt-3.5-turbo',
