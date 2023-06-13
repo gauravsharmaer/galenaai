@@ -17,8 +17,8 @@ export async function POST(request) {
         }
     ],
     mode:"payment",
-    success_url: "http://localhost:3000/success",
-    cancel_url:"http://localhost:3000/cancel"
+    success_url: "https://galenaai.vercel.app/success",
+    cancel_url:"https://galenaai.vercel.app/cancel"
    })
 return NextResponse.json(session.url)
 }
