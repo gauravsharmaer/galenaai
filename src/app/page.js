@@ -35,45 +35,59 @@ if(input.length === 0){
 
 
   //
-  const handlesearch= async () => {
+  // const handlesearch= async () => {
    
-    const apiKey =`${process.env.OPENAI_API_KEY}`
-    const apiEndpoint = 'https://api.openai.com/v1/chat/completions';
-    const payload = {
-      model: 'gpt-3.5-turbo',
-      messages: [
-        { role: 'system', content: 'You are a doctor.' },
-        { role: 'user', content: input },
-      ],
-    };
+  //   const apiKey =`${process.env.OPENAI_API_KEY}`
+  //   const apiEndpoint = 'https://api.openai.com/v1/chat/completions';
+  //   const payload = {
+  //     model: 'gpt-3.5-turbo',
+  //     messages: [
+  //       { role: 'system', content: 'You are a doctor.' },
+  //       { role: 'user', content: input },
+  //     ],
+  //   };
   
-    try {
-      const response = await fetch(apiEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify(payload),
-      });
+  //   try {
+  //     const response = await fetch(apiEndpoint, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Authorization': `Bearer ${apiKey}`
+  //       },
+  //       body: JSON.stringify(payload),
+  //     });
      
-      if (!response.ok) {
-        throw new Error('Network response was not OK');
-      }
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not OK');
+  //     }
 
-         const gptdata = await response.json()
-      setReply(gptdata.choices[0].message.content)
+  //        const gptdata = await response.json()
+  //     setReply(gptdata.choices[0].message.content)
      
-      console.log(reply)
+  //     console.log(reply)
   
      
-    }
-     catch (error) {
-      console.error(error);
-    }
+  //   }
+  //    catch (error) {
+  //     console.error(error);
+  //   }
     
-  };
+  // };
 
+
+const handlesearch = async () =>{
+const options ={
+  method: "POST",
+  body: JSON.stringify({message: input}),
+  headers: {
+    "Content-Type": "application/json"
+  }
+}
+const response = await fetch("/api/openai",options)
+const data = await response.json()
+console.log("data",data)
+setReply(data)
+}
 
 
   return (
