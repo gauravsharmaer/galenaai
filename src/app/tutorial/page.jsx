@@ -19,7 +19,7 @@ const Tutorial = () => {
       <div className="mb-7">
         <h2 className="font-bold mb-5 text-xl">How to ask questions</h2>
         <p className="pr-8 text-lg">
-          GalenAI - in the default Q/A mode works best when you ask full and detailed questions. For example, it's good to start your question with something like "what is.." or "how to.."
+          GalenAI - in the default Q/A mode works best when you ask full and detailed questions. For example, it is  good to start your question with something like what is.. or how to..
         </p>
       </div>
 
@@ -28,7 +28,7 @@ const Tutorial = () => {
         <p className="mb-3 pr-12 text-lg">GalenAI supports two different search modes.</p>
         <ul className="list-disc text-lg">
           <li className="pr-4 sm:pl-[2rem]">Q/A mode is the default mode. It works best for questions.</li>
-          <li className="pr-4">Clinical Summary mode is best for generating summaries about clinical topics, such as disease states or drugs. It works best when you just type in a topic. For example, "diabetes" or "metformin".</li>
+          <li className="pr-4">Clinical Summary mode is best for generating summaries about clinical topics, such as disease states or drugs. It works best when you just type in a topic. For example, diabetes or metformin.</li>
         </ul>
       </div>
 
