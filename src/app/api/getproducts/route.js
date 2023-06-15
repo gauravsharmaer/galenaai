@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET(request) {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
     const prices = await stripe.prices.list({
-        limit: 1
+        limit: 1,
         //we have only 1 item to checkout
     });
 
